@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL async="false" continueOnError="false" enabled="true" name="removeLabelFromSIM-add-other-namespaces">
+    <DisplayName>removeLabelFromSIM Add Other Namespaces</DisplayName>
+    <Properties/>
+    <Source>request</Source>
+    <ResourceURL>xsl://removeLabelFromSIM-add-other-namespaces.xslt</ResourceURL>
+    <Parameters ignoreUnresolvedVariables="true"/>
+</XSL>

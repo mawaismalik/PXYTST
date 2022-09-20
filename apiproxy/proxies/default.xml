@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>Generated SOAP to API proxyExternalAPIImplService</Description>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>FC-BasicAuth</Name>
+            </Step>
+            <Step>
+                <Name>extract-format</Name>
+            </Step>
+            <Step>
+                <Name>remove-header-authorization</Name>
+            </Step>
+            <Step>
+                <Name>escapeXML</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="GetOAS">
+            <Description>Get Open API Specification</Description>
+            <Request>
+                <Step>
+                    <Name>return-open-api</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/openapi.json") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getSIMLastEvents">
+            <Description>getSIMLastEvents</Description>
+            <Request>
+                <Step>
+                    <Name>SIMsLastEvents-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>SIMLastEvents-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMLastEvents-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simlastevents") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getSIMsNBIoTCurrentCycleUsageDetails">
+            <Description>getSIMsNBIoTCurrentCycleUsageDetails</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMsNBIoTCurrentCycleUsageDetails-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsNBIoTCurrentCycleUsageDetails</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsNBIoTCurrentCycleUsageDetails-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simsnbiotcurrentcycleusagedetails") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getSIMsLastEvents">
+            <Description>getSIMsLastEvents</Description>
+            <Request>
+                <Step>
+                    <Name>SIMsLastEvents-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsLastEvents</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsLastEvents-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simslastevents") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getSIMsHistoryDetails">
+            <Description>getSIMsHistoryDetails</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMsHistoryDetails-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsHistoryDetails</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsHistoryDetails-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simshistorydetails") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="resumeSIMs">
+            <Description>resumeSIMs</Description>
+            <Request>
+                <Step>
+                    <Name>resumeSIMs-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>resumeSIMs</Name>
+                </Step>
+                <Step>
+                    <Name>resumeSIMs-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/resumesims") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="createTemplateLabels">
+            <Description>createTemplateLabels</Description>
+            <Request>
+                <Step>
+                    <Name>createTemplateLabels-json-to-xml</Name>
+                    <Condition>(request.header.Content-Type == "application/json")</Condition>
+                </Step>
+                <Step>
+                    <Name>createTemplateLabels-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>createTemplateLabels-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/createTemplateLabels") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getCostCentersByIds">
+            <Description>getCostCentersByIds</Description>
+            <Request>
+                <Step>
+                    <Name>CostCentersByIds-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>CostCentersByIds</Name>
+                </Step>
+                <Step>
+                    <Name>getCostCentersByIds-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/costcentersbyids") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getSIMsSMSCurrentCycleUsageDetails">
+            <Description>getSIMsSMSCurrentCycleUsageDetails</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMsSMSCurrentCycleUsageDetails-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>simsSMSCurrentCycleUsageDetailsadd-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsSMSCurrentCycleUsageDetails-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simssmscurrentcycleusagedetails") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getSIMsOfflineInfo">
+            <Description>getSIMsOfflineInfo</Description>
+            <Request>
+                <Step>
+                    <Name>SIMsOfflineInfo-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsOfflineInfo</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsOfflineInfo-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simsofflineinfo") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="moveSIMsToCostCenter">
+            <Description>moveSIMsToCostCenter</Description>
+            <Request>
+                <Step>
+                    <Name>moveSIMsToCostCenter-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>moveSIMsToCostCenter</Name>
+                </Step>
+                <Step>
+                    <Name>moveSIMsToCostCenter-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/movesimstocostcenter") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getSIMsOnlineInfo">
+            <Description>getSIMsOnlineInfo</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMsOnlineInfo-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsOnlineInfo</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsOnlineInfo-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simsonlineinfo") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="suspendSIMs">
+            <Description>suspendSIMs</Description>
+            <Request>
+                <Step>
+                    <Name>suspendSim-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>XSL-Transform-1</Name>
+                </Step>
+                <Step>
+                    <Name>suspendSim-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/suspendsims") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getSIMsByCustomerId">
+            <Description>getSIMsByCustomerId</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMsByCustomerId-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simsbycustomerid") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getSIMCompleteInformation">
+            <Description>getSIMCompleteInformation</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMCompleteInformation-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simcompleteinformation") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="generateReport">
+            <Description>generateReport</Description>
+            <Request>
+                <Step>
+                    <Name>generateReport-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/generatereport") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="updateSIMData">
+            <Description>updateSIMData</Description>
+            <Request>
+                <Step>
+                    <Name>updateSIMData-json-to-xml</Name>
+                    <Condition>(request.header.Content-Type == "application/json")</Condition>
+                </Step>
+                <Step>
+                    <Name>updateSIMData-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>updateSIMData-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simdata") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getSIMsCurrentCycleDataUsageDetails">
+            <Description>getSIMsCurrentCycleDataUsageDetails</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMsCurrentCycleDataUsageDetails-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsCurrentCycleDataUsageDetails</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsCurrentCycleDataUsageDetails-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simscurrentcycledatausagedetails") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getSMSStatuses">
+            <Description>getSMSStatuses</Description>
+            <Request>
+                <Step>
+                    <Name>getSMSStatuses-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/smsstatuses") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="removeLabelFromSIM">
+            <Description>removeLabelFromSIM</Description>
+            <Request>
+                <Step>
+                    <Name>removeLabelFromSIM-json-to-xml</Name>
+                    <Condition>(request.header.Content-Type == "application/json")</Condition>
+                </Step>
+                <Step>
+                    <Name>removeLabelFromSIM-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>removeLabelFromSIM-add-other-namespaces</Name>
+                </Step>
+                <Step>
+                    <Name>removeLabelFromSIM-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/labelfromsim") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="terminateSIMs">
+            <Description>terminateSIMs</Description>
+            <Request>
+                <Step>
+                    <Name>terminateSims-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>terminateSIMs-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>terminateSIMs-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/terminatesims") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="removeLabelByNameFromSIMs">
+            <Description>removeLabelByNameFromSIMs</Description>
+            <Request>
+                <Step>
+                    <Name>removeLabelByNameFromSIMs-json-to-xml</Name>
+                    <Condition>(request.header.Content-Type == "application/json")</Condition>
+                </Step>
+                <Step>
+                    <Name>removeLabelByNameFromSIMs-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>removeLabelByNameFromSIMs-add-other-namespaces</Name>
+                </Step>
+                <Step>
+                    <Name>removeLabelByNameFromSIMs-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/labelbynamefromsims") and (request.verb = "DELETE")</Condition>
+        </Flow>
+        <Flow name="getSIMsByBusinessUnitId">
+            <Description>getSIMsByBusinessUnitId</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMsByBusinessUnitId-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simsbybusinessunitid") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="moveSIMsToBusinessUnit">
+            <Description>moveSIMsToBusinessUnit</Description>
+            <Request>
+                <Step>
+                    <Name>moveSIMsToBusinessUnit-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>moveSIMsToBusinessUnit</Name>
+                </Step>
+                <Step>
+                    <Name>moveSIMsToBusinessUnit-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/movesimstobusinessunit") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getSIMHistory">
+            <Description>getSIMHistory</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMHistory-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simhistory") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="activateSIMs">
+            <Description>activateSIMs</Description>
+            <Request>
+                <Step>
+                    <Name>activateSIMs-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>activateSIMs</Name>
+                </Step>
+                <Step>
+                    <Name>activateSIMs-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/activatesims") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="disconnectSessions">
+            <Description>disconnectSessions</Description>
+            <Request>
+                <Step>
+                    <Name>disconnectSessions-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/disconnectsessions") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getSIMsVoiceCurrentCycleLastUsageDetails">
+            <Description>getSIMsVoiceCurrentCycleLastUsageDetails</Description>
+            <Request>
+                <Step>
+                    <Name>SIMsVoiceCurrentCycleLastUsageDetails-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>simsVoiceCurrentCycleLastUsageDetails-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsVoiceCurrentCycleLastUsageDetails-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simsvoicecurrentcyclelastusagedetails") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="deactivateUsers">
+            <Description>deactivateUsers</Description>
+            <Request>
+                <Step>
+                    <Name>deactivateUsers-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>deactivateUsers</Name>
+                </Step>
+                <Step>
+                    <Name>deactivateUsers-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/deactivateusers") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getAllServiceProfiles">
+            <Description>getAllServiceProfiles</Description>
+            <Request>
+                <Step>
+                    <Name>getAllServiceProfiles-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>getAllServiceProfiles-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>getAllServiceProfiles</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/allserviceprofiles") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="bulkSMSSend">
+            <Description>bulkSMSSend</Description>
+            <Request>
+                <Step>
+                    <Name>bulkSMSSend-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>bulkSMSSend</Name>
+                </Step>
+                <Step>
+                    <Name>bulkSMSSend-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/bulksmssend") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="bulkSMSSendBinary">
+            <Description>bulkSMSSendBinary</Description>
+            <Request>
+                <Step>
+                    <Name>bulkSMSSendBinary-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>bulkSMSSendBinary</Name>
+                </Step>
+                <Step>
+                    <Name>bulkSMSSendBinary-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/bulksmssendbinary") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="bulkSMSSendDeliveryReceipt">
+            <Description>bulkSMSSendDeliveryReceipt</Description>
+            <Request>
+                <Step>
+                    <Name>bulkSMSSendDeliveryReceipt-json-to-xml</Name>
+                    <Condition>(request.header.Content-Type == "application/json")</Condition>
+                </Step>
+                <Step>
+                    <Name>bulkSMSSendDeliveryReceipt-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>bulkSMSSendDeliveryReceipt-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/bulksmssenddeliveryreceipt") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="bulkSMSSendBinaryDeliveryReceipt">
+            <Description>bulkSMSSendBinaryDeliveryReceipt</Description>
+            <Request>
+                <Step>
+                    <Name>bulkSMSSendBinaryDeliveryReceipt-json-to-xml</Name>
+                    <Condition>(request.header.Content-Type == "application/json")</Condition>
+                </Step>
+                <Step>
+                    <Name>bulkSMSSendBinaryDeliveryReceipt-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>bulkSMSSendBinaryDeliveryReceipt-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/bulksmssendbinarydeliveryreceipt") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="addLabelToSIMs">
+            <Description>addLabelToSIMs</Description>
+            <Request>
+                <Step>
+                    <Name>addLabelToSIMs-json-to-xml</Name>
+                    <Condition>(request.header.Content-Type == "application/json")</Condition>
+                </Step>
+                <Step>
+                    <Name>addLabelToSIMs-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>addLabelToSIMs-add-other-namespaces</Name>
+                </Step>
+                <Step>
+                    <Name>addLabelToSIMs-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/labeltosims") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getSIMsByCostCenterId">
+            <Description>getSIMsByCostCenterId</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMsByCostCenterId-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simsbycostcenterid") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getRequestStatus">
+            <Description>getRequestStatus</Description>
+            <Request>
+                <Step>
+                    <Name>getRequestStatus-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/requeststatus") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="updateCostCenters">
+            <Description>updateCostCenters</Description>
+            <Request>
+                <Step>
+                    <Name>updateCostCenters-json-to-xml</Name>
+                    <Condition>(request.header.Content-Type == "application/json")</Condition>
+                </Step>
+                <Step>
+                    <Name>updateCostCenters-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>updateCostCenters-add-other-namespaces</Name>
+                </Step>
+                <Step>
+                    <Name>updateCostCenters-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/costcenters") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="changeSIMsServiceProfile">
+            <Description>changeSIMsServiceProfile</Description>
+            <Request>
+                <Step>
+                    <Name>changeSIMsServiceProfile-json-to-xml</Name>
+                    <Condition>(request.header.Content-Type == "application/json")</Condition>
+                </Step>
+                <Step>
+                    <Name>changeSIMsServiceProfile-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>changeSIMsServiceProfile-add-other-namespaces</Name>
+                </Step>
+                <Step>
+                    <Name>changeSIMsServiceProfile-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simsserviceprofile") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getSIMsUsageAndCostDetails">
+            <Description>getSIMsUsageAndCostDetails</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMsUsageAndCostDetails-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsUsageAndCostDetails-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>getSIMsUsageAndCostDetails-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simsusageandcostdetails") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="diagnoseSim">
+            <Description>diagnoseSim</Description>
+            <Request>
+                <Step>
+                    <Name>diagnoseSim-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/diagnosesim") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="retrieveSMS">
+            <Description>retrieveSMS</Description>
+            <Request>
+                <Step>
+                    <Name>retrieveSMS-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/sms") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getModifiedSIMs">
+            <Description>getModifiedSIMs</Description>
+            <Request>
+                <Step>
+                    <Name>getModifiedSIMs-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/modifiedsims") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="addLabelByNameToSIMs">
+            <Description>addLabelByNameToSIMs</Description>
+            <Request>
+                <Step>
+                    <Name>addLabelByNameToSIMs-json-to-xml</Name>
+                    <Condition>(request.header.Content-Type == "application/json")</Condition>
+                </Step>
+                <Step>
+                    <Name>addLabelByNameToSIMs-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>addLabelByNameToSIMs-add-other-namespaces</Name>
+                </Step>
+                <Step>
+                    <Name>addLabelByNameToSIMs-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/labelbynametosims") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getTriggerCounters">
+            <Description>getTriggerCounters</Description>
+            <Request>
+                <Step>
+                    <Name>getTriggerCounters-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/triggercounters") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getSIMAccessNetworkDetails">
+            <Description>getSIMAccessNetworkDetails</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMAccessNetworkDetails-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simaccessnetworkdetails") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="echoCDP">
+            <Description>echoCDP</Description>
+            <Request>
+                <Step>
+                    <Name>echoCDP-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/echocdp") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getSIMTriggersDetails">
+            <Description>getSIMTriggersDetails</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMTriggersDetails-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simtriggersdetails") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getTemplateLabels">
+            <Description>getTemplateLabels</Description>
+            <Request>
+                <Step>
+                    <Name>getTemplateLabels-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>getTemplateLabels</Name>
+                </Step>
+                <Step>
+                    <Name>getTemplateLabels-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/templatelabels") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="isServiceAvailable">
+            <Description>isServiceAvailable</Description>
+            <Request>
+                <Step>
+                    <Name>isServiceAvailable-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/isserviceavailable") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getMyCustomer">
+            <Description>getMyCustomer</Description>
+            <Request>
+                <Step>
+                    <Name>getMyCustomer-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/mycustomer") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="createUser">
+            <Description>createUser</Description>
+            <Request>
+                <Step>
+                    <Name>createUser-json-to-xml</Name>
+                    <Condition>(request.header.Content-Type == "application/json")</Condition>
+                </Step>
+                <Step>
+                    <Name>createUser-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>createUser-add-other-namespaces</Name>
+                </Step>
+                <Step>
+                    <Name>createUser-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/user") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getUsers">
+            <Description>getUsers</Description>
+            <Request>
+                <Step>
+                    <Name>getUsers-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>getUsers</Name>
+                </Step>
+                <Step>
+                    <Name>getUsers-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="updateUsers">
+            <Description>updateUsers</Description>
+            <Request>
+                <Step>
+                    <Name>updateUsers-json-to-xml</Name>
+                    <Condition>(request.header.Content-Type == "application/json")</Condition>
+                </Step>
+                <Step>
+                    <Name>updateUsers-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>updateUsers-add-other-namespaces</Name>
+                </Step>
+                <Step>
+                    <Name>updateUsers-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/updateusers") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getBusinessUnitsByIds">
+            <Description>getBusinessUnitsByIds</Description>
+            <Request>
+                <Step>
+                    <Name>getBusinessUnitsByIds-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>getBusinessUnitsByIds</Name>
+                </Step>
+                <Step>
+                    <Name>getBusinessUnitsByIds-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/businessunitsbyids") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getSIMUsageAndCostInformation">
+            <Description>getSIMUsageAndCostInformation</Description>
+            <Request>
+                <Step>
+                    <Name>getSIMUsageAndCostInformation-build-soap</Name>
+                </Step>
+                <Step>
+                    <Name>remove-empty-nodes</Name>
+                    <Condition>(verb == "GET")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/simusageandcostinformation") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="setUserCredentials">
+            <Description>setUserCredentials</Description>
+            <Request>
+                <Step>
+                    <Name>setUserCredentials-json-to-xml</Name>
+                    <Condition>(request.header.Content-Type == "application/json")</Condition>
+                </Step>
+                <Step>
+                    <Name>setUserCredentials-add-namespace</Name>
+                </Step>
+                <Step>
+                    <Name>setUserCredentials-add-other-namespaces</Name>
+                </Step>
+                <Step>
+                    <Name>setUserCredentials-add-soapaction</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/usercredentials") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="updateVinForSIMs">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>updateVinForSIMs-json-to-xml</Name>
+                </Step>
+                <Step>
+                    <Name>updateVinForSIMs</Name>
+                </Step>
+                <Step>
+                    <Name>updateVinForSIMs-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/updateVinForSIMs") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="cancelSimLocation">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>cancelSimLocation-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/cancelSimLocation") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="getLatestRegistrationDetails">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>getLatestRegistrationDetails-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/getLatestRegistrationDetails") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="unknown-resource">
+            <Description>Unknown Resource</Description>
+            <Request>
+                <Step>
+                    <Name>unknown-resource</Name>
+                    <Condition>(verb != "GET" AND contentformat == "application/json") OR (verb == "GET" AND acceptformat !~ "*/xml")</Condition>
+                </Step>
+                <Step>
+                    <Name>unknown-resource-xml</Name>
+                    <Condition>(verb != "GET" AND contentformat != "application/json") OR (verb == "GET" AND acceptformat ~ "*/xml")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition/>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/a-cdp/v1</BasePath>
+        <Properties/>
+        <VirtualHost>internal</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

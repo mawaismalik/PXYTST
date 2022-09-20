@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL async="false" continueOnError="false" enabled="true" name="getUsers">
+    <DisplayName>getUsers</DisplayName>
+    <Properties/>
+    <Source>request</Source>
+    <ResourceURL>xsl://getUsers.xslt</ResourceURL>
+    <Parameters ignoreUnresolvedVariables="true" />
+    <OutputVariable></OutputVariable>
+</XSL>

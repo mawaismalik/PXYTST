@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="true" enabled="true" name="getSIMHistory-build-soap">
+    <DisplayName>getSIMHistory Build SOAP</DisplayName>
+    <Add>
+        <Headers>
+            <Header name="SOAPAction"/>
+        </Headers>
+    </Add>
+    <Set>
+        <Headers>
+            <Header name="Content-Type">text/xml; charset=utf-8</Header>
+        </Headers>
+        <Payload contentType="text/xml">
+            <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="http://webservice.stc.comarch.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" soapenv:encodingStyle="{encodingStyle}">
+                <soapenv:Body>
+                    <tns:getSIMHistory>
+                        <login xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{login}</login>
+                        <password xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{password}</password>
+                        <identifier xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{identifier}</identifier>
+                        <simIds xmlns:null="http://jaxb.dev.java.net/array" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">
+                            <item xmlns:ns1="http://jaxb.dev.java.net/array">{item}</item>
+                        </simIds>
+                    </tns:getSIMHistory>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </Payload>
+        <Verb>POST</Verb>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL async="false" continueOnError="false" enabled="true" name="bulkSMSSendBinaryDeliveryReceipt-add-other-namespaces">
+    <DisplayName>bulkSMSSendBinaryDeliveryReceipt Add Other Namespaces</DisplayName>
+    <Properties/>
+    <Source>request</Source>
+    <ResourceURL>xsl://bulkSMSSendBinaryDeliveryReceipt-add-other-namespaces.xslt</ResourceURL>
+    <Parameters ignoreUnresolvedVariables="true"/>
+</XSL>

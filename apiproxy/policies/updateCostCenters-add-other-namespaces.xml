@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL async="false" continueOnError="false" enabled="true" name="updateCostCenters-add-other-namespaces">
+    <DisplayName>updateCostCenters Add Other Namespaces</DisplayName>
+    <Properties/>
+    <Source>request</Source>
+    <ResourceURL>xsl://updateCostCenters-add-other-namespaces.xslt</ResourceURL>
+    <Parameters ignoreUnresolvedVariables="true"/>
+</XSL>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="true" enabled="true" name="generateReport-build-soap">
+    <DisplayName>generateReport Build SOAP</DisplayName>
+    <Add>
+        <Headers>
+            <Header name="SOAPAction"/>
+        </Headers>
+    </Add>
+    <Set>
+        <Headers>
+            <Header name="Content-Type">text/xml; charset=utf-8</Header>
+        </Headers>
+        <Payload contentType="text/xml">
+            <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="http://webservice.stc.comarch.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" soapenv:encodingStyle="{encodingStyle}">
+                <soapenv:Body>
+                    <tns:generateReport>
+                        <login xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{login}</login>
+                        <password xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{password}</password>
+                        <templateType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{templateType}</templateType>
+                        <aggregationLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{aggregationLevel}</aggregationLevel>
+                        <selectedElementId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{selectedElementId}</selectedElementId>
+                        <reportFormat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{reportFormat}</reportFormat>
+                        <notificationRecipients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{notificationRecipients}</notificationRecipients>
+                        <period xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{period}</period>
+                        <periodMonth xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{periodMonth}</periodMonth>
+                        <periodFromHour xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{periodFromHour}</periodFromHour>
+                        <periodToHour xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{periodToHour}</periodToHour>
+                        <imsiMin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{imsiMin}</imsiMin>
+                        <imsiMax xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{imsiMax}</imsiMax>
+                        <exportCoverage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="{type}">{exportCoverage}</exportCoverage>
+                    </tns:generateReport>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </Payload>
+        <Verb>POST</Verb>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

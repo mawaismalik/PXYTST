@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL async="false" continueOnError="false" enabled="true" name="resumeSIMs">
+    <DisplayName>resumeSIMs</DisplayName>
+    <Properties/>
+    <Source>request</Source>
+    <ResourceURL>xsl://resumeSIMs.xslt</ResourceURL>
+    <Parameters ignoreUnresolvedVariables="true" />
+    <OutputVariable></OutputVariable>
+</XSL>

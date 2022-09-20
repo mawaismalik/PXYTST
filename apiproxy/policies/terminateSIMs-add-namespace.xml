@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL async="false" continueOnError="false" enabled="true" name="terminateSIMs-add-namespace">
+    <DisplayName>terminateSIMs-add-namespace</DisplayName>
+    <Properties/>
+    <Source>request</Source>
+    <ResourceURL>xsl://terminateSIMs-add-namespace.xsl</ResourceURL>
+    <Parameters ignoreUnresolvedVariables="true" />
+    <OutputVariable></OutputVariable>
+</XSL>

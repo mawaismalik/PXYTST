@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="updateVinForSIMs-build-soap">
+    <DisplayName>updateVinForSIMs-build-soap</DisplayName>
+    <Properties/>
+    <Add>
+        <Headers>
+            <Header name="SOAPAction"/>
+        </Headers>
+    </Add>
+    <Set>
+        <Headers>
+            <Header name="Content-Type">text/xml; charset=utf-8</Header>
+        </Headers>
+        <!--<Payload contentType="text/xml">
+            <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.stc.comarch.com/">
+                <soapenv:Header/>
+                <soapenv:Body>
+                    <web:updateVinForSIMs>
+                        <login>{login}</login>
+                        <password>{password}</password>
+                        <simsIdentifier>{identifier}</simsIdentifier>
+                        <sims>
+                            <item>
+                                <simId>{simId}</simId>
+                                <vin>{deviceId}</vin>
+                            </item>
+                        </sims>
+                    </web:updateVinForSIMs>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </Payload>-->
+        <Verb>POST</Verb>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

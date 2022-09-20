@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL async="false" continueOnError="false" enabled="true" name="getTemplateLabels">
+    <DisplayName>getTemplateLabels</DisplayName>
+    <Properties/>
+    <Source>request</Source>
+    <ResourceURL>xsl://getTemplateLabels.xslt</ResourceURL>
+    <Parameters ignoreUnresolvedVariables="true" />
+    <OutputVariable></OutputVariable>
+</XSL>

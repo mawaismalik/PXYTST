@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL async="false" continueOnError="false" enabled="true" name="createTemplateLabels-add-namespace">
+    <DisplayName>createTemplateLabels Add Namespace</DisplayName>
+    <Properties/>
+    <Source>request</Source>
+    <ResourceURL>xsl://createTemplateLabels-add-namespace.xslt</ResourceURL>
+    <Parameters ignoreUnresolvedVariables="true"/>
+</XSL>

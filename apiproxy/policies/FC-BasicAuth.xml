@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FlowCallout async="false" continueOnError="false" enabled="true" name="FC-BasicAuth">
+    <DisplayName>FC-BasicAuth</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <SharedFlowBundle>SF-BasicAuth</SharedFlowBundle>
+</FlowCallout>

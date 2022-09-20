@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="EV-DownloadReport">
+    <DisplayName>EV-DownloadReport</DisplayName>
+    <Properties/>
+    <QueryParam name="reportId">
+        <Pattern ignoreCase="true">{reportId}</Pattern>
+    </QueryParam>
+    <QueryParam name="login">
+        <Pattern ignoreCase="true">{login}</Pattern>
+    </QueryParam>
+    <QueryParam name="password">
+        <Pattern ignoreCase="true">{password}</Pattern>
+    </QueryParam>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>

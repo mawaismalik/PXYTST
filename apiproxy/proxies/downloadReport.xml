@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="downloadReport">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>FC-BasicAuth</Name>
+            </Step>
+            <Step>
+                <Name>extract-format</Name>
+            </Step>
+            <Step>
+                <Name>remove-header-authorization</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="downloadReport">
+            <Description>generateReport</Description>
+            <Request>
+                <Step>
+                    <Name>EV-DownloadReport</Name>
+                </Step>
+                <Step>
+                    <Name>FC-EncodeCredentials</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/download") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/a-cdp/v1/reports</BasePath>
+        <Properties>
+            <Property name="response.streaming.enabled">true</Property>
+        </Properties>
+        <VirtualHost>internal</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>streaming</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

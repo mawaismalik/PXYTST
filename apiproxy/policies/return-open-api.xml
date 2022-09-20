@@ -1,0 +1,1601 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="return-open-api">
+    <DisplayName>Return Open API</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+        	<StatusCode>200</StatusCode>
+            <Headers>
+            	<Header name="Content-Type">application/json</Header>
+            </Headers>
+            <Payload contentType="application/json" variablePrefix="@" variableSuffix="#">{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "ExternalAPIImplService",
+    "description": "A OAS document generated from WSDL",
+    "termsOfService": "",
+    "contact": {
+      "name": "API Team"
+    },
+    "license": {
+      "name": "Apache 2.0"
+    }
+  },
+  "host": "@request.header.host#",
+  "basePath": "/a-cdp/v1",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/bulksmssend": {
+      "get": {
+        "description": "Implements WSDL operation bulkSMSSend",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sourceBusinessUnitId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "message",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "simID",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pin",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simaccessnetworkdetails": {
+      "get": {
+        "description": "Implements WSDL operation getSIMAccessNetworkDetails",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sMID",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/labelfromsim": {
+      "delete": {
+        "description": "Implements WSDL operation removeLabelFromSIM",
+        "parameters": [
+          {
+            "name": "removeLabelFromSIM",
+            "in": "body",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/removeLabelFromSIM"
+            }
+          }
+        ]
+      }
+    },
+    "/labelbynamefromsims": {
+      "delete": {
+        "description": "Implements WSDL operation removeLabelByNameFromSIMs",
+        "parameters": [
+          {
+            "name": "removeLabelByNameFromSIMs",
+            "in": "body",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/removeLabelByNameFromSIMs"
+            }
+          }
+        ]
+      }
+    },
+    "/echocdp": {
+      "get": {
+        "description": "Implements WSDL operation echoCDP",
+        "parameters": [
+          {
+            "name": "value",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simsvoicecurrentcyclelastusagedetails": {
+      "get": {
+        "description": "Implements WSDL operation getSIMsVoiceCurrentCycleLastUsageDetails",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/sms": {
+      "get": {
+        "description": "Implements WSDL operation retrieveSMS",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "registrationId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "maxBatchSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/bulksmssendbinarydeliveryreceipt": {
+      "delete": {
+        "description": "Implements WSDL operation bulkSMSSendBinaryDeliveryReceipt",
+        "parameters": [
+          {
+            "name": "bulkSMSSendBinaryDeliveryReceipt",
+            "in": "body",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/bulkSMSSendBinaryDeliveryReceipt"
+            }
+          }
+        ]
+      }
+    },
+    "/simshistorydetails": {
+      "get": {
+        "description": "Implements WSDL operation getSIMsHistoryDetails",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simlastevents": {
+      "get": {
+        "description": "Implements WSDL operation getSIMLastEvents",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/bulksmssenddeliveryreceipt": {
+      "delete": {
+        "description": "Implements WSDL operation bulkSMSSendDeliveryReceipt",
+        "parameters": [
+          {
+            "name": "bulkSMSSendDeliveryReceipt",
+            "in": "body",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/bulkSMSSendDeliveryReceipt"
+            }
+          }
+        ]
+      }
+    },
+    "/bulksmssendbinary": {
+      "get": {
+        "description": "Implements WSDL operation bulkSMSSendBinary",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sourceBusinessUnitId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "message",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "simID",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pin",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/users": {
+      "put": {
+        "description": "Implements WSDL operation updateUsers",
+        "parameters": [
+          {
+            "name": "updateUsers",
+            "in": "body",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/updateUsers"
+            }
+          }
+        ]
+      },
+      "get": {
+        "description": "Implements WSDL operation getUsers",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/generatereport": {
+      "get": {
+        "description": "Implements WSDL operation generateReport",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "templateType",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "aggregationLevel",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "selectedElementId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "reportFormat",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "notificationRecipients",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "periodMonth",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "periodFromHour",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "periodToHour",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "imsiMin",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "imsiMax",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "exportCoverage",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/isserviceavailable": {
+      "get": {
+        "description": "Implements WSDL operation isServiceAvailable",
+        "parameters": []
+      }
+    },
+    "/simsserviceprofile": {
+      "put": {
+        "description": "Implements WSDL operation changeSIMsServiceProfile",
+        "parameters": [
+          {
+            "name": "changeSIMsServiceProfile",
+            "in": "body",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/changeSIMsServiceProfile"
+            }
+          }
+        ]
+      }
+    },
+    "/templatelabels": {
+      "post": {
+        "description": "Implements WSDL operation createTemplateLabels",
+        "parameters": [
+          {
+            "name": "createTemplateLabels",
+            "in": "body",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/createTemplateLabels"
+            }
+          }
+        ]
+      },
+      "get": {
+        "description": "Implements WSDL operation getTemplateLabels",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/labeltosims": {
+      "post": {
+        "description": "Implements WSDL operation addLabelToSIMs",
+        "parameters": [
+          {
+            "name": "addLabelToSIMs",
+            "in": "body",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/addLabelToSIMs"
+            }
+          }
+        ]
+      }
+    },
+    "/labelbynametosims": {
+      "post": {
+        "description": "Implements WSDL operation addLabelByNameToSIMs",
+        "parameters": [
+          {
+            "name": "addLabelByNameToSIMs",
+            "in": "body",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/addLabelByNameToSIMs"
+            }
+          }
+        ]
+      }
+    },
+    "/disconnectsessions": {
+      "get": {
+        "description": "Implements WSDL operation disconnectSessions",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sMID",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/activatesims": {
+      "get": {
+        "description": "Implements WSDL operation activateSIMs",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "serviceProfile",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/allserviceprofiles": {
+      "get": {
+        "description": "Implements WSDL operation getAllServiceProfiles",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/businessunitsbyids": {
+      "get": {
+        "description": "Implements WSDL operation getBusinessUnitsByIds",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/costcentersbyids": {
+      "get": {
+        "description": "Implements WSDL operation getCostCentersByIds",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/mycustomer": {
+      "get": {
+        "description": "Implements WSDL operation getMyCustomer",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simsbybusinessunitid": {
+      "get": {
+        "description": "Implements WSDL operation getSIMsByBusinessUnitId",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "businessUnitId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simsbycostcenterid": {
+      "get": {
+        "description": "Implements WSDL operation getSIMsByCostCenterId",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "costCenterId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simsbycustomerid": {
+      "get": {
+        "description": "Implements WSDL operation getSIMsByCustomerId",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simssmscurrentcycleusagedetails": {
+      "get": {
+        "description": "Implements WSDL operation getSIMsSMSCurrentCycleUsageDetails",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simslastevents": {
+      "get": {
+        "description": "Implements WSDL operation getSIMsLastEvents",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simsofflineinfo": {
+      "get": {
+        "description": "Implements WSDL operation getSIMsOfflineInfo",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simcompleteinformation": {
+      "get": {
+        "description": "Implements WSDL operation getSIMCompleteInformation",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "simId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simtriggersdetails": {
+      "get": {
+        "description": "Implements WSDL operation getSIMTriggersDetails",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "simId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simsnbiotcurrentcycleusagedetails": {
+      "get": {
+        "description": "Implements WSDL operation getSIMsNBIoTCurrentCycleUsageDetails",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simsonlineinfo": {
+      "get": {
+        "description": "Implements WSDL operation getSIMsOnlineInfo",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simusageandcostinformation": {
+      "get": {
+        "description": "Implements WSDL operation getSIMUsageAndCostInformation",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "simId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/smsstatuses": {
+      "get": {
+        "description": "Implements WSDL operation getSMSStatuses",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "transactionId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/movesimstobusinessunit": {
+      "get": {
+        "description": "Implements WSDL operation moveSIMsToBusinessUnit",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "businessUnitId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "serviceProfileId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/movesimstocostcenter": {
+      "get": {
+        "description": "Implements WSDL operation moveSIMsToCostCenter",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "costCenterId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "serviceProfileId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/resumesims": {
+      "get": {
+        "description": "Implements WSDL operation resumeSIMs",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/usercredentials": {
+      "put": {
+        "description": "Implements WSDL operation setUserCredentials",
+        "parameters": [
+          {
+            "name": "setUserCredentials",
+            "in": "body",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/setUserCredentials"
+            }
+          }
+        ]
+      }
+    },
+    "/suspendsims": {
+      "get": {
+        "description": "Implements WSDL operation suspendSIMs",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/terminatesims": {
+      "get": {
+        "description": "Implements WSDL operation terminateSIMs",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/deactivateusers": {
+      "get": {
+        "description": "Implements WSDL operation deactivateUsers",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/costcenters": {
+      "put": {
+        "description": "Implements WSDL operation updateCostCenters",
+        "parameters": [
+          {
+            "name": "updateCostCenters",
+            "in": "body",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/updateCostCenters"
+            }
+          }
+        ]
+      }
+    },
+    "/simdata": {
+      "put": {
+        "description": "Implements WSDL operation updateSIMData",
+        "parameters": [
+          {
+            "name": "updateSIMData",
+            "in": "body",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/updateSIMData"
+            }
+          }
+        ]
+      }
+    },
+    "/triggercounters": {
+      "get": {
+        "description": "Implements WSDL operation getTriggerCounters",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "trigger_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "simId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simhistory": {
+      "get": {
+        "description": "Implements WSDL operation getSIMHistory",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simsusageandcostdetails": {
+      "get": {
+        "description": "Implements WSDL operation getSIMsUsageAndCostDetails",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/simscurrentcycledatausagedetails": {
+      "get": {
+        "description": "Implements WSDL operation getSIMsCurrentCycleDataUsageDetails",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "item",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/modifiedsims": {
+      "get": {
+        "description": "Implements WSDL operation getModifiedSIMs",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "businessUnitId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "periodParameter",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "number",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/requeststatus": {
+      "get": {
+        "description": "Implements WSDL operation getRequestStatus",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "transactionId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/diagnosesim": {
+      "get": {
+        "description": "Implements WSDL operation diagnoseSim",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "simId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/user": {
+      "post": {
+        "description": "Implements WSDL operation createUser",
+        "parameters": [
+          {
+            "name": "createUser",
+            "in": "body",
+            "required": "true",
+            "schema": {
+              "$ref": "#/definitions/createUser"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "item": {
+      "properties": {},
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "$ref": "#/definitions/item"
+      }
+    },
+    "simIds": {
+      "properties": {
+        "item": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "type": "object"
+    },
+    "paging": {
+      "properties": {
+        "number": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "type": "object"
+    },
+    "tagEntity": {
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "type": "object"
+    },
+    "paygConfig": {
+      "properties": {
+        "PAYGSetting": {
+          "type": "string"
+        },
+        "PAYGBlockingDuration": {
+          "type": "string"
+        },
+        "localData": {
+          "type": "boolean"
+        },
+        "roamingData": {
+          "type": "boolean"
+        },
+        "localNbiot": {
+          "type": "boolean"
+        },
+        "roamingNbiot": {
+          "type": "boolean"
+        },
+        "localSMS": {
+          "type": "boolean"
+        },
+        "roamingSMS": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    }
+  }
+}</Payload>
+        </Set>
+    </FaultResponse>
+</RaiseFault>
